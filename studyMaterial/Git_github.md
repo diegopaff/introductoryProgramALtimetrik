@@ -52,3 +52,21 @@
 4. Fork: Forking a repository creates a personal copy of the original repository, allowing you to freely experiment with changes.
 5. Stars: Stars represent a way to bookmark repositories for future reference or to show appreciation for a project.
 
+
+## Difference between git merge, git rebase and git squash.
+
+1. **`git rebase`**: git rebase is used to integrate changes from one branch onto another by moving or combining commits.
+    -It allows you to apply the commits of one branch onto the tip of another branch, resulting in a linear commit history.
+    -It is commonly used to keep feature branches up to date with changes made in the main branch before merging.
+    -This command can be helpful in creating a clean, linear history but should be used with caution when working in a team and sharing branches, as it rewrites commit history.
+
+
+2. **`git merge`**: git merge combines changes from different branches into a single branch, typically the current branch or the branch being merged into.
+    -It creates a new commit that represents the combination of changes from the merged branches.
+    -Merging preserves the commit history of both branches, resulting in a more complex commit history compared to rebasing.
+    -This command is commonly used to integrate feature branches into the main branch or combine changes from multiple branches.
+
+3. **`git squash`**: git squash is not a built-in Git command, but rather a technique used to combine multiple commits into a single, cleaner commit.
+    -It is typically used when you have several small, incremental commits that you want to consolidate into a larger, cohesive commit.
+    -Squashing commits can make the commit history more concise and easier to understand for others reviewing the code.
+    -It involves using interactive rebase (git rebase -i) to squash the selected commits into one, effectively rewriting the commit history.
